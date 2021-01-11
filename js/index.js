@@ -57,7 +57,7 @@ navIMG.src = siteContent.nav['img-src']
 //H1 HEADER //
 const ctaTitle = document.querySelector('h1');
 ctaTitle.textContent = siteContent.cta["h1"];
-ctaTitle.innerHTML = siteContent.cta["h1"].split(' ').join('<br>');
+ctaTitle.innerHTML = siteContent.cta["h1"].split(' ').join('<br/>');
 
 //button
 ctaTitle.nextElementSibling.textContent = siteContent.cta['button'];
@@ -75,6 +75,7 @@ mainH4[2].textContent = siteContent["main-content"]["services-h4"]
 mainH4[3].textContent = siteContent["main-content"]["product-h4"]
 mainH4[4].textContent = siteContent["main-content"]["vision-h4"]
 
+
 const mainCont = document.querySelectorAll('.top-content .text-content p')
 mainCont[0].textContent = siteContent["main-content"]["features-content"]
 mainCont[1].textContent = siteContent["main-content"]["about-content"]
@@ -87,3 +88,20 @@ const bottomCont = document.querySelectorAll('.bottom-content .text-content p')
 bottomCont[0].textContent = siteContent["main-content"]["services-content"]
 bottomCont[1].textContent = siteContent["main-content"]["product-content"]
 bottomCont[2].textContent = siteContent["main-content"]["vision-content"]
+
+//BOTTOM SECTION CONTACT
+mainH4[5].textContent = siteContent.contact["contact-h4"]
+const contactP = document.querySelectorAll('.contact p')
+
+contactP[1].textContent = siteContent.contact.phone
+contactP[2].textContent = siteContent.contact.email
+
+
+contactP[0].innerHTML = siteContent.contact.address.split('t S').join('t <br/> S')
+
+
+//FOOTER
+const footer = document.querySelector('footer p')
+footer.textContent = siteContent.footer.copyright
+
+
