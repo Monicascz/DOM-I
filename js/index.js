@@ -69,11 +69,21 @@ headerIMG.src = siteContent.cta['img-src'];
 //MAIN CONTENT
 
 const mainH4 = document.querySelectorAll('h4')
-console.log(mainH4);
 mainH4[0].textContent = siteContent["main-content"]["features-h4"]
 mainH4[1].textContent = siteContent["main-content"]["about-h4"]
 mainH4[2].textContent = siteContent["main-content"]["services-h4"]
 mainH4[3].textContent = siteContent["main-content"]["product-h4"]
+mainH4[4].textContent = siteContent["main-content"]["vision-h4"]
 
-const mainCont = document.querySelectorAll('main-content p')
-console.log(mainCont);
+const mainCont = document.querySelectorAll('.top-content .text-content p')
+mainCont[0].textContent = siteContent["main-content"]["features-content"]
+mainCont[1].textContent = siteContent["main-content"]["about-content"]
+
+document.querySelector('#middle-img').src = siteContent["main-content"]["middle-img-src"]
+
+
+
+const bottomCont = document.querySelectorAll('.bottom-content .text-content p')
+bottomCont[0].textContent = siteContent["main-content"]["services-content"]
+bottomCont[1].textContent = siteContent["main-content"]["product-content"]
+bottomCont[2].textContent = siteContent["main-content"]["vision-content"]
