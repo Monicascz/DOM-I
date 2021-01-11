@@ -43,12 +43,34 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //NAVIGATION LINKS
 const navItems = document.querySelectorAll('a')
-navItems[0].textContent = siteContent.nav["nav-item-1"]
-navItems[1].textContent = siteContent.nav["nav-item-2"]
-navItems[2].textContent = siteContent.nav["nav-item-3"]
-navItems[3].textContent = siteContent.nav["nav-item-4"]
-navItems[4].textContent = siteContent.nav["nav-item-5"]
-navItems[5].textContent = siteContent.nav["nav-item-6"]
+// navItems[0].textContent = siteContent.nav["nav-item-1"]
+// navItems[1].textContent = siteContent.nav["nav-item-2"]
+// navItems[2].textContent = siteContent.nav["nav-item-3"]
+// navItems[3].textContent = siteContent.nav["nav-item-4"]
+// navItems[4].textContent = siteContent.nav["nav-item-5"]
+// navItems[5].textContent = siteContent.nav["nav-item-6"]
+ 
+//OR FOR LOOP VERSION
+for (let i=0; i<navItems.length; i++){
+  navItems[i].innerHTML = siteContent['nav'][`nav-item-${i+1}`]
+}
+
+const navItemsArr = Array.from(navItems)
+//CHANGING NAV LINK COLORS
+let firstAnchor = document.createElement('a')
+firstAnchor.textContent = "TestAnchor" 
+firstAnchor.href = "#"
+document.querySelector('nav').prepend(firstAnchor)
+
+
+navItemsArr.push(firstAnchor)
+// console.log(navItemsArr)
+
+navItemsArr.forEach(item=> {
+  item.style.color = "orange";
+})
+// firstAnchor.style.color = "orange";
+
 
 const navIMG = document.querySelector('#logo-img')
 navIMG.src = siteContent.nav['img-src']
@@ -103,5 +125,7 @@ contactP[0].innerHTML = siteContent.contact.address.split('t S').join('t <br/> S
 //FOOTER
 const footer = document.querySelector('footer p')
 footer.textContent = siteContent.footer.copyright
+
+
 
 
